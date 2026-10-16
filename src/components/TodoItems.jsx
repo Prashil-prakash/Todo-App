@@ -3,7 +3,7 @@ import styles from "./TodoItems.module.css";
 
 const TodoItems = ({ todoItems, onDeleteClick }) => {
   return (
-    <div classNameName={styles.itemsContainer}>
+    <div className={styles.itemsContainer}>
       {todoItems.map((item) => (
         <TodoItem
           key={item.name + item.duedate}
