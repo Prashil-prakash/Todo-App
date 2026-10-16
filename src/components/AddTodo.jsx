@@ -16,20 +16,20 @@ function AddTodo({ onNewItem }) {
   };
 
   return (
-    <div classNameName="container text-center">
-      <form classNameName="row kg-row" onSubmit={handleAddButtonClicked}>
-        <div classNameName="col-6">
+    <div className="container text-center">
+      <form className="row kg-row" onSubmit={handleAddButtonClicked}>
+        <div className="col-6">
           <input
             type="text"
             ref={todoNameElement}
             placeholder="Enter Todo Here"
           />
         </div>
-        <div classNameName="col-4">
+        <div className="col-4">
           <input type="date" ref={dueDateElement} />
         </div>
-        <div classNameName="col-2">
-          <button type="submit" classNameName="btn btn-success kg-button">
+        <div className="col-2">
+          <button type="submit" className="btn btn-success kg-button">
             <BiMessageAdd />
           </button>
         </div>
