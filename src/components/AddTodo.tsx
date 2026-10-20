@@ -15,32 +15,33 @@ function AddTodo({ onNewItem }:AddTodoProps) {
     event.preventDefault();
     const todoName = todoNameElement.current?.value || "";
     const dueDate = dueDateElement.current?.value || "";
-    todoNameElement.current.value = "";
-    dueDateElement.current.value = "";
+   if (todoNameElement.current) todoNameElement.current.value = "";
+    if (dueDateElement.current) dueDateElement.current.value = "";
 
     onNewItem(todoName, dueDate);
   };
 
   return (
-    <div className="container text-center">
-      <form className="row kg-row" onSubmit={handleAddButtonClicked}>
-        <div className="col-6">
+    
+      <form className="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center w-full" onSubmit={handleAddButtonClicked}>
+        <div className="sm:col-span-6 w-full">
           <input
             type="text"
             ref={todoNameElement}
             placeholder="Enter Todo Here"
+            className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all duration-200 shadow-sm"
           />
         </div>
-        <div className="col-4">
-          <input type="date" ref={dueDateElement} />
+        <div className="sm:col-span-4 w-full">
+          <input type="date" ref={dueDateElement} className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-white transition-all duration-200 shadow-sm" />
         </div>
-        <div className="col-2">
-          <button type="submit" className="btn btn-success kg-button">
+        <div className="sm:col-span-2 w-full">
+          <button type="submit" className="w-full h-11.5 flex justify-center items-center bg-indigo-600 hover:bg-indigo-700 active:scale-98 text-white font-semibold text-2xl rounded-xl shadow-md hover:shadow-lg cursor-pointer transition-all duration-200">
             <BiMessageAdd />
           </button>
         </div>
       </form>
-    </div>
+    
   );
 }
 

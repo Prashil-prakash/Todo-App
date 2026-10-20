@@ -1,8 +1,8 @@
-import styles from "./WelcomeMessage.module.css"
+
 
 
 const WelcomeMessage=()=>{
-  return <p className={styles.welcome}>enjoy your day</p>;
+  return <p className="">enjoy your day</p>;
 
 
 }

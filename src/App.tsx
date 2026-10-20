@@ -2,10 +2,10 @@ import AppName from "./components/AppName";
 import AddTodo from "./components/AddTodo";
 import TodoItems from "./components/TodoItems";
 import WelcomeMessage from "./components/WelcomeMessage";
-import { Todo } from "./Types";
+import { Todo } from "./Types.ts";
 
 
-import "./App.css";
+
 import { useState } from "react";
 
 
@@ -27,21 +27,28 @@ function App() {
     setTodoItems(newTodoItems);
   };
 
-  return (
-    <center className="todo-container">
-      <AppName />
+  return (<div className="min-h-screen bg-linear-to-br from-slate-50 to-slate-100 py-12 px-4 flex justify-center items-start">
       
       
-      <AddTodo onNewItem={handleNewItem} />
-      
-      
-      {todoItems.length === 0 && <WelcomeMessage />}
+      <div className="w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-slate-100 p-6 sm:p-8 space-y-8">
+        
+        
+        <AppName />
+        
+        
+        <AddTodo onNewItem={handleNewItem} />
+        
+       
+        {todoItems.length === 0 && <WelcomeMessage />}
 
-      <TodoItems
-        todoItems={todoItems}
-        onDeleteClick={handleDeleteItem}
-      ></TodoItems>
-    </center>
+        
+        <TodoItems
+          todoItems={todoItems}
+          onDeleteClick={handleDeleteItem}
+        />
+        
+      </div>
+    </div>
   );
 }
 

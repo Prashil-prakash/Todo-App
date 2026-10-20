@@ -1,18 +1,26 @@
 import TodoItem from "./TodoItem";
-import styles from "./TodoItems.module.css";
+import { Todo } from "../Types"; 
 
-const TodoItems = ({ todoItems, onDeleteClick }) => {
+
+interface TodoItemsProps {
+  todoItems: Todo[];
+  onDeleteClick: (todoItemName: string) => void;
+}
+
+const TodoItems = ({ todoItems, onDeleteClick }: TodoItemsProps) => {
   return (
-    <div className={styles.itemsContainer}>
+    
+    <div className="flex flex-col gap-3 w-full mt-4">
       {todoItems.map((item) => (
         <TodoItem
           key={item.name + item.duedate}
           todoDate={item.duedate}
           todoName={item.name}
           onDeleteClick={onDeleteClick}
-        ></TodoItem>
+        />
       ))}
     </div>
   );
 };
+
 export default TodoItems;
