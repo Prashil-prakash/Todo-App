@@ -14,7 +14,7 @@ function TodoItem({ todoName, todoDate, onDeleteClick }: TodoItemProps) {
     <div className="grid grid-cols-1 sm:grid-cols-12 gap-3 items-center w-full bg-slate-50 border border-slate-100 p-3.5 rounded-xl transition-all duration-200 shadow-sm hover:bg-slate-100/70">
       
       
-      <div className="sm:col-span-6 text-left font-medium text-slate-700 tracking-wide break-words">
+      <div className="sm:col-span-6 text-left font-medium text-slate-700 tracking-wide wrap-break-word">
         {todoName}
       </div>
 
