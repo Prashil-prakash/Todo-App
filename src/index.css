@@ -4,4 +4,4 @@
   --animate-spin-slow: spin 8s linear infinite;
 }
 
-@variant dark (&:where(.dark, .dark *));
+@custom-variant dark (&:where(.dark, .dark *));
